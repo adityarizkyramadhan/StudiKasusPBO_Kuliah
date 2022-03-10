@@ -1,6 +1,6 @@
 # StudiKasusPBO_Kuliah
 
-Anggota Kelompok : 
+Anggota Kelompok : <br>
 Aditya Rizky Ramadhan 			(215150201111007)<br>
 Ikrar Budidharma 				(215150207111011)<br>
 Ismail Extrant Sinaga 				(215150200111003)<br>
