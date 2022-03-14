@@ -13,6 +13,6 @@ public class SupirRentCar extends Karyawan{
 
     public void getInfo(){
         super.getInfo();
-        System.out.printf("%-18s %s\n","Mobil yang disewa",":"+ this.mobilSewa);
+        System.out.printf("%-18s %s\n","Mobil yang disewa",":"+ this.mobilSewa.getNmerkMobil());
     }
 }
