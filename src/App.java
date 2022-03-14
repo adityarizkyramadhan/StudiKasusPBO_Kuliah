@@ -21,15 +21,14 @@ public class App {
         for (int i = 0; i < karyawan.length; i++) {
             System.out.print("Masukkan jenis karyawan: ");
             int statusKaryawan = s.nextInt();
-            System.out.print("\nMasukkan nama\t: ");
+            System.out.print("Masukkan nama\t: ");
             String nama = s.next();
-            System.out.print("\nMasukkan alamat\t: ");
+            System.out.print("Masukkan alamat\t: ");
             String alamat = s.next();
-            System.out.print("\nMasukkan No. Telepon\t: ");
+            System.out.print("Masukkan No. Telepon\t: ");
             String noTelp = s.next();
-            System.out.print("\nJenis Kelamin (Laki-laki/Perempuan)\t: ");
+            System.out.print("Jenis Kelamin (Laki-laki/Perempuan)\t: ");
             String sex  = s.next();
-            
             if (statusKaryawan == 1){
                 var newAdmin = new Admin(nama,alamat,noTelp, sex);
                 System.out.print("Masukkan tunjangan : ");
@@ -40,7 +39,29 @@ public class App {
             } 
             else if (statusKaryawan == 2){
                 var newSupirTravel = new SupirTravel(nama,alamat,noTelp, sex);
-                newSupirTravel.setRuteTrayek("");
+                System.out.println("""
+                    Jurusan Travel : 
+                        1. MALANG-SURABAYA
+                        2. MALANG-SIDOARJO
+                        3. BANDUNG-JAKARTA
+                        4. SURABAYA-PROBOLINGGO
+                        5. KEDIRI-MALANG
+                        6. SURABAYA-PAMEKASAN    
+                        """);
+                int pilTrayek = s.nextInt();
+                if (pilTrayek == 1){
+                    newSupirTravel.setRuteTrayek("MALANG-SURABAYA");
+                } else if (pilTrayek == 2){
+                    newSupirTravel.setRuteTrayek("MALANG-SIDOARJO");
+                } else if (pilTrayek == 3){
+                    newSupirTravel.setRuteTrayek("BANDUNG-JAKARTA");
+                } else if (pilTrayek == 4){
+                    newSupirTravel.setRuteTrayek("SURABAYA-PROBOLINGGO");
+                } else if (pilTrayek == 5){
+                    newSupirTravel.setRuteTrayek("KEDIRI-MALANG");
+                } else if (pilTrayek == 6){
+                    newSupirTravel.setRuteTrayek("SURABAYA-PAMEKASAN");
+                }
                 newSupirTravel.getInfo();
                 karyawan[i] = newSupirTravel;
             } 
@@ -76,6 +97,7 @@ public class App {
                 System.err.println("\n=== PILIH 1-3 ===");
             }
         }
+        s.close();
     }
 }    
     // Method
