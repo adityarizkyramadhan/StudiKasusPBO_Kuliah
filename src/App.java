@@ -92,8 +92,8 @@ public class App {
             }else{
                 System.err.println("\n=== PILIH 1-3 ===");
             }
-            printKaryawan(karyawan);
         }
+        printKaryawan(karyawan);
         s.close();
     }
     private static void printKaryawan(Karyawan[] karyawan){
