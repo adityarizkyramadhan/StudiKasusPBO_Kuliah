@@ -14,6 +14,7 @@ public class App {
         int input = s.nextInt();
         Karyawan [] karyawan =  new Karyawan[input];
         System.out.println("""
+            Posisi Jabatan
                 1. Admin
                 2. Supir Travel
                 3. Supir Supir Car
@@ -34,20 +35,18 @@ public class App {
                 System.out.print("Masukkan tunjangan : ");
                 int tunjangan = s.nextInt();
                 newAdmin.setTunjangan(tunjangan);
-                newAdmin.getInfo();
                 karyawan[i] = newAdmin;
             } 
             else if (statusKaryawan == 2){
                 var newSupirTravel = new SupirTravel(nama,alamat,noTelp, sex);
                 System.out.println("""
-                    Jurusan Travel : 
-                        1. MALANG-SURABAYA
-                        2. MALANG-SIDOARJO
-                        3. BANDUNG-JAKARTA
-                        4. SURABAYA-PROBOLINGGO
-                        5. KEDIRI-MALANG
-                        6. SURABAYA-PAMEKASAN    
-                        """);
+                Jurusan Travel : 
+                    1. MALANG-SURABAYA
+                    2. MALANG-SIDOARJO
+                    3. BANDUNG-JAKARTA
+                    4. SURABAYA-PROBOLINGGO
+                    5. KEDIRI-MALANG
+                    6. SURABAYA-PAMEKASAN """);
                 int pilTrayek = s.nextInt();
                 if (pilTrayek == 1){
                     newSupirTravel.setRuteTrayek("MALANG-SURABAYA");
@@ -62,19 +61,17 @@ public class App {
                 } else if (pilTrayek == 6){
                     newSupirTravel.setRuteTrayek("SURABAYA-PAMEKASAN");
                 }
-                newSupirTravel.getInfo();
                 karyawan[i] = newSupirTravel;
             } 
             else if (statusKaryawan == 3){
                 var newSupirRentCar = new SupirRentCar(nama,alamat,noTelp, sex);
                 System.out.println("""
-                    Pilihan Mobil
-                        1. Innova
-                        2. Alphard
-                        3. Bugatti
-                        4. Rolls RollsRoyce
-                        5. Porche
-                        """);
+                Pilihan Mobil
+                    1. Innova
+                    2. Alphard
+                    3. Bugatti
+                    4. Rolls RollsRoyce     
+                    5. Porche """);
                 int sewaMobil = s.nextInt();
                 if (sewaMobil == 1){
                     newSupirRentCar.setMobilSewa(innova);
@@ -91,13 +88,19 @@ public class App {
                 else if (sewaMobil == 5){
                     newSupirRentCar.setMobilSewa(porsche);
                 } 
-                newSupirRentCar.getInfo();
                 karyawan[i] = newSupirRentCar;
             }else{
                 System.err.println("\n=== PILIH 1-3 ===");
             }
+            printKaryawan(karyawan);
         }
         s.close();
+    }
+    private static void printKaryawan(Karyawan[] karyawan){
+        for (int i = 0; i < karyawan.length; i++) {
+            System.out.println("\n=== Karyawan ke-" + (i+1) + " ===");
+            karyawan[i].getInfo();
+        }
     }
 }    
     // Method
