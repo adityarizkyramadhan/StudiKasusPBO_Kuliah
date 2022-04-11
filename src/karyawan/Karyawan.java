@@ -1,4 +1,8 @@
-public class Karyawan {
+package karyawan;
+
+import mobil.Mobil;
+
+public class Karyawan{
     private String nama;
     private String alamat;
     private String noTelp;
@@ -50,23 +54,25 @@ public class Karyawan {
     
     public void getInfoKaryawan(Karyawan K){
         if (K instanceof Admin){
-            K.getInfo();
+            K.cetakInfo();
         }
         else if (K instanceof SupirTravel){
-            K.getInfo();
+            K.cetakInfo();
         }
         else if (K instanceof SupirRentCar){
-            K.getInfo();
+            K.cetakInfo();
         }
     }
 
-    public void getInfo(){
+    public void cetakInfo(){
         System.out.printf("%-18s %s\n","Nama",":"+ this.nama);
         System.out.printf("%-18s %s\n","Alamat",":"+ this.alamat);
         System.out.printf("%-18s %s\n","No. Telepon",":"+ this.noTelp);
         System.out.printf("%-18s %s\n","Jenis Kelamin",":"+ this.jenisKelamin);
         
     }
+    
+    
 }
 
 

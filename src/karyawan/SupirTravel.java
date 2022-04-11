@@ -1,7 +1,7 @@
-public class SupirTravel extends Karyawan{
+package karyawan;
+public class SupirTravel extends Karyawan implements CetakInfoKaryawan{
     
-    SupirTravel(String nama, String alamat, String noTelp, String jenisKelamin){
-        // super constructor
+    public SupirTravel(String nama, String alamat, String noTelp, String jenisKelamin){
         super(nama, alamat, noTelp, jenisKelamin);
     }
     
@@ -13,9 +13,9 @@ public class SupirTravel extends Karyawan{
     public String getRuteTrayek(){
         return this.ruteTrayek;
     }
-
-    public void getInfo(){
-        super.getInfo();
+    
+    public void cetakInfo(){
+        super.cetakInfo();
         System.out.printf("%-18s %s\n","Rute Trayek",":"+ this.ruteTrayek);
     }
 }

@@ -1,46 +1,19 @@
-public class Mobil {
-    //attribute
+package mobil;
+
+public class Mobil{
+    
     private String noPlat;
     private String nmerkMobil;
     private String kecepatan;
     private String warna;
     private String tahun;
-    //setter & getter
-    // public String getTahun() {
-    //     return tahun;
-    // }
-    // public String getWarna() {
-    //     return warna;
-    // }
-    // public void setWarna(String warna) {
-    //     this.warna = warna;
-    // }
-    // public String getNoPlat() {
-    //     return noPlat;
-    // }
-    // public void setNoPlat(String noPlat) {
-    //     this.noPlat = noPlat;
-    // }
+
     public String getNmerkMobil() {
         return nmerkMobil;
     }
-    // public void setNmerkMobil(String nmerkMobil) {
-    //     this.nmerkMobil = nmerkMobil;
-    // }
-    // public String getKecepatan() {
-    //     return kecepatan;
-    // }
-    // public void setKecepatan(String kecepatan) {
-    //     this.kecepatan = kecepatan;
-    // }
-    // public void setTahun(String tahun) {
-    //     this.tahun = tahun;
-    // }
 
-    //constructor
     public Mobil() {
     }
-
 
     public Mobil(String noPlat, String nmerkMobil, String kecepatan, String warna, String tahun) {
         this.noPlat = noPlat;

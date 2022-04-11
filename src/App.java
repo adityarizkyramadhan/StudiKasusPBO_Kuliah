@@ -1,7 +1,8 @@
 import java.util.Scanner;
+import mobil.*;
+import karyawan.*;
 
 public class App {
-    // static Scanner input = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
         Mobil innova = new Mobil ("B 12345", "Innova", "120km/jam", "Hitam", "2018");
         Mobil alphard = new Mobil ("B 67890", "Alphard", "125km/jam", "Merah", "2018");
@@ -31,7 +32,7 @@ public class App {
             System.out.print("Jenis Kelamin (Laki-laki/Perempuan)\t: ");
             String sex  = s.next();
             if (statusKaryawan == 1){
-                var newAdmin = new Admin(nama,alamat,noTelp, sex);
+                Admin newAdmin = new Admin(nama,alamat,noTelp, sex);
                 System.out.print("Masukkan tunjangan : ");
                 int tunjangan = s.nextInt();
                 newAdmin.setTunjangan(tunjangan);
@@ -39,29 +40,33 @@ public class App {
             } 
             else if (statusKaryawan == 2){
                 var newSupirTravel = new SupirTravel(nama,alamat,noTelp, sex);
-                System.out.println("""
-                Jurusan Travel : 
-                    1. MALANG-SURABAYA
-                    2. MALANG-SIDOARJO
-                    3. BANDUNG-JAKARTA
-                    4. SURABAYA-PROBOLINGGO
-                    5. KEDIRI-MALANG
-                    6. SURABAYA-PAMEKASAN """);
-                int pilTrayek = s.nextInt();
-                if (pilTrayek == 1){
-                    newSupirTravel.setRuteTrayek("MALANG-SURABAYA");
-                } else if (pilTrayek == 2){
-                    newSupirTravel.setRuteTrayek("MALANG-SIDOARJO");
-                } else if (pilTrayek == 3){
-                    newSupirTravel.setRuteTrayek("BANDUNG-JAKARTA");
-                } else if (pilTrayek == 4){
-                    newSupirTravel.setRuteTrayek("SURABAYA-PROBOLINGGO");
-                } else if (pilTrayek == 5){
-                    newSupirTravel.setRuteTrayek("KEDIRI-MALANG");
-                } else if (pilTrayek == 6){
-                    newSupirTravel.setRuteTrayek("SURABAYA-PAMEKASAN");
+                try {
+                    int count = 0;
+                    for(var jurusan : Jurusan.values()){
+                        System.out.println(count + jurusan.getDescription());
+                        count++;
+                    }
+                } catch (ArrayIndexOutOfBoundsException e){
+                    System.out.println(e);
                 }
-                karyawan[i] = newSupirTravel;
+                int pilTrayek = s.nextInt();
+                try {
+                    if (pilTrayek == 1){
+                        newSupirTravel.setRuteTrayek(Jurusan.SURABAYA.getDescription());
+                    } else if (pilTrayek == 2){
+                        newSupirTravel.setRuteTrayek(Jurusan.MADURA.getDescription());
+                    } else if (pilTrayek == 3){
+                        newSupirTravel.setRuteTrayek(Jurusan.BANYUWANGI.getDescription());
+                    } else if (pilTrayek == 4){
+                        newSupirTravel.setRuteTrayek(Jurusan.SITUBONDO.getDescription());
+                    } else if (pilTrayek == 5){
+                        newSupirTravel.setRuteTrayek(Jurusan.TULUNGAGUNG.getDescription());
+                    }
+                    karyawan[i] = newSupirTravel;
+                } catch (ArrayIndexOutOfBoundsException exception){
+                    System.err.println("PILIHAN TIDAK ADA!!!");
+                    System.out.println(exception);
+                }
             } 
             else if (statusKaryawan == 3){
                 var newSupirRentCar = new SupirRentCar(nama,alamat,noTelp, sex);
@@ -99,60 +104,7 @@ public class App {
     private static void printKaryawan(Karyawan[] karyawan){
         for (int i = 0; i < karyawan.length; i++) {
             System.out.println("\n=== Karyawan ke-" + (i+1) + " ===");
-            karyawan[i].getInfo();
+            karyawan[i].cetakInfo();
         }
     }
 }    
-    // Method
-    // public static void inputMobil(Mobil [] mobils) {
-    //     for(int i = 0; i < mobils.length; i++) {
-    //         System.out.println("Mobil ke-" + (i+1));
-    //         System.out.print("No. Plat : ");
-    //         String noPlat = input.nextLine();
-    //         System.out.print("Nama Mobil : ");
-    //         String nmerkMobil = input.nextLine();
-    //         System.out.print("Kecepatan : ");
-    //         String kecepatan = input.nextLine();
-    //         System.out.print("Warna :");
-    //         String warna = input.nextLine();
-    //         System.out.print("Tahun : ");
-    //         String tahun = input.nextLine();
-    //         mobils[i] = new Mobil(noPlat, nmerkMobil, kecepatan, warna, tahun);
-    //     }
-    //     for(var mobil : mobils){
-    //         mobil.cetakInfo();
-    //     }
-    // }
-
-    // public static void inputKaryawan (Karyawan [] karyawans) {
-    //     for(int i = 0; i < karyawans.length; i++) {
-    //         //input karyawan
-    //         System.out.println("Karyawan ke-" + (i+1));
-    //         System.out.print("Nama : ");
-    //         String nama = input.nextLine();
-    //         System.out.print("Alamat : ");
-    //         String alamat = input.nextLine();
-    //         System.out.print("No. Telepon : ");
-    //         String noHp = input.nextLine();
-    //         System.out.print("Jenis Kelamin : ");
-    //         String jenisKelamin = input.nextLine();
-    //         System.out.print("Jenis karyawan : ");
-    //         String jenisKaryawan = input.nextLine();
-    //         karyawans[i] = new Karyawan(nama, alamat, noHp, jenisKelamin, jenisKaryawan);
-    //     }
-    //     for(var karyawan : karyawans){
-    //         karyawan.getInfo();
-    //     }
-    // }
-    // public void getInfoKaryawan(Karyawan K){
-    //     if (K instanceof Admin){
-            
-    //     } 
-    //     else if (K instanceof SupirTravel){
-            
-    //     } 
-    //     else if (K instanceof SupirRental){
-    //     }
-    // }
-
-

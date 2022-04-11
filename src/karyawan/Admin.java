@@ -1,7 +1,9 @@
-public class Admin extends Karyawan {
+package karyawan;
+
+public class Admin extends Karyawan implements CetakInfoKaryawan {
     private int tunjangan;
 
-    Admin(String nama, String alamat, String noTelp, String jenisKelamin){
+    public Admin(String nama, String alamat, String noTelp, String jenisKelamin) {
         super(nama, alamat, noTelp, jenisKelamin);
     }
     // settter getter 
@@ -13,10 +15,10 @@ public class Admin extends Karyawan {
     }
     
     @Override
-    public void getInfo(){
-        super.getInfo();
+    public void cetakInfo() {
+        super.cetakInfo();
         System.out.printf("%-18s Rp %s\n","Tunjangan",":"+ this.tunjangan);
     }
 }
-    
+
 

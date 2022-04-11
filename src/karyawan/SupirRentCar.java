@@ -1,18 +1,22 @@
-public class SupirRentCar extends Karyawan{
+package karyawan;
+
+import mobil.Mobil;
+
+public class SupirRentCar extends Karyawan implements CetakInfoKaryawan{
     private Mobil mobilSewa;
 
-    SupirRentCar(String nama, String alamat, String noTelp, String jenisKelamin){
+    public SupirRentCar(String nama, String alamat, String noTelp, String jenisKelamin){
         super(nama, alamat, noTelp, jenisKelamin);
     }
     public void setMobilSewa(Mobil mobilSewa) {
         this.mobilSewa = mobilSewa;
-    }
+    } 
     public Mobil getMobilSewa() {
         return mobilSewa;
     }
-
-    public void getInfo(){
-        super.getInfo();
+    @Override
+    public void cetakInfo(){
+        super.cetakInfo();
         System.out.printf("%-18s %s\n","Mobil yang disewa",":"+ this.mobilSewa.getNmerkMobil());
     }
 }
