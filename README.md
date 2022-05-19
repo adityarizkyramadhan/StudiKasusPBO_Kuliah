@@ -1,4 +1,4 @@
-# StudiKasusPBO_Kuliah
+# StudiKasusPBO_Kelompok 7_Kuliah
 
 Anggota Kelompok : <br>
 Aditya Rizky Ramadhan 			(215150201111007)<br>
