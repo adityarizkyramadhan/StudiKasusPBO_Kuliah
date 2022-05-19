@@ -10,13 +10,14 @@ public class SupirRentCar extends Karyawan implements CetakInfoKaryawan{
     }
     public void setMobilSewa(Mobil mobilSewa) {
         this.mobilSewa = mobilSewa;
-    } 
+    }
     public Mobil getMobilSewa() {
         return mobilSewa;
     }
     @Override
     public void cetakInfo(){
         super.cetakInfo();
-        System.out.printf("%-18s %s\n","Mobil yang disewa",":"+ this.mobilSewa.getNmerkMobil());
+        System.out.println("Kendaraan yang disewa :");
+        mobilSewa.cetakInfo();
     }
 }

@@ -38,7 +38,6 @@ public class Karyawan{
     public String getJenisKelamin() {
         return jenisKelamin;
     }
-    
     public void setNama(String nama) {
         this.nama = nama;
     }
@@ -69,10 +68,7 @@ public class Karyawan{
         System.out.printf("%-18s %s\n","Alamat",":"+ this.alamat);
         System.out.printf("%-18s %s\n","No. Telepon",":"+ this.noTelp);
         System.out.printf("%-18s %s\n","Jenis Kelamin",":"+ this.jenisKelamin);
-        
     }
-    
-    
 }
 
 

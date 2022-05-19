@@ -1,7 +1,6 @@
 package mobil;
 
-public class Mobil{
-    
+public class Mobil{ 
     private String noPlat;
     private String nmerkMobil;
     private String kecepatan;
@@ -11,7 +10,6 @@ public class Mobil{
     public String getNmerkMobil() {
         return nmerkMobil;
     }
-
     public Mobil() {
     }
 
